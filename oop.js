@@ -2,9 +2,10 @@
  var inherit=require('./inherit.js');
  var HouseholdAppliences=require('./HouseholdAppliences.js');
  var SmartAppliences=require('./SmartAppliences.js');
- var dynamicSort=require('./Functions');
- var printNameForArray=require('./Functions');
- var printEnabled=require('./Functions');
+ var dynamicSort=require('./dynamicSort.js');
+ var printNameForArray=require('./printNameForArray.js');
+ var printEnabled=require('./printEnabled.js');
+ var printSmartAppliences=require('./printSmartAppliences.js');
  var Temp=0;
  const readline = require('readline');
  
@@ -22,23 +23,24 @@ output: process.stdout
 });
 
 rl.question('What do you want to do? Type "1" sort all appliences by powerconsumption, type "2" to get a list of enabled devices devices, type "3" to list all smart appliences, type "4" to get leftover power, type "5" to get a list of smart apliences owners  ', (answer) => {
-    if (answer=='1'){
+    switch (Number(answer)){
+    case 1:
     	powerSupply=powerSupply.sort(dynamicSort("powerConsumption"));
   		powerSupply.forEach(printNameForArray);
-    }
-    if (answer=='2'){
+    break
+    case 2:
 		powerSupply.forEach(printEnabled);
-    }
-    if (answer=='3'){
+    break
+    case 3:
     	powerSupply.forEach(printSmartAppliences);
-    }
-    if (answer=='4'){
+    break
+    case 4:
     	powerSupply.printLeftoverPower();
-    }
-    if (answer=='5'){
-    	powerSupply.forEach(printSmartAppliences,this.getOwner);
-    }
-  	console.log(answer);
+    break
+    case 5:
+    	powerSupply.forEach(getOwners);
+    break
+	};
   rl.close();
 });
 });
@@ -63,8 +65,9 @@ powerSupply.printLeftoverPower=function(){
 		console.log('Current powersupply output is insufficient, powersupply overloaded by: ',powerCons-powersupplyOutput);	
 		}
 };
-function printSmartAppliences(item,index){
-	if (item.constructor==SmartAppliences){
-		console.log(index+' '+item.getOwner());
+
+getOwners=function(item,index){
+	if(item.constructor==SmartAppliences){
+		console.log(item.owner);
 	}
-};
+}
