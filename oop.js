@@ -6,6 +6,7 @@
  var printNameForArray=require('./printNameForArray.js');
  var printEnabled=require('./printEnabled.js');
  var printSmartAppliences=require('./printSmartAppliences.js');
+ var getOwners=require('./getOwners.js');
  var Temp=0;
  const readline = require('readline');
  
@@ -65,9 +66,3 @@ powerSupply.printLeftoverPower=function(){
 		console.log('Current powersupply output is insufficient, powersupply overloaded by: ',powerCons-powersupplyOutput);	
 		}
 };
-
-getOwners=function(item,index){
-	if(item.constructor==SmartAppliences){
-		console.log(item.owner);
-	}
-}
