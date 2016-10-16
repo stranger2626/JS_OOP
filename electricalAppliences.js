@@ -1,6 +1,6 @@
-function electricalAppliences(){};
+function ElectricalAppliences(){};
 
- electricalAppliences.prototype = {
+ ElectricalAppliences.prototype = {
  
  	printName:function(){
  		console.log(this.name);
@@ -24,4 +24,4 @@ function electricalAppliences(){};
  		this.name=name;
  	}
 	};
-	module.exports=electricalAppliences;
+	module.exports=ElectricalAppliences;
