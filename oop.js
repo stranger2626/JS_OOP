@@ -53,9 +53,9 @@ rl.question('What do you want to do? Type "1" sort all appliences by powerconsum
 		powerSupply.forEach(Search);
 		rl2.close();
 		});
+ });
 });
-});
-  
+ 
    	
 
 powerSupply.sum=function(items, prop) {
