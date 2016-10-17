@@ -45,7 +45,7 @@ rl.question('What do you want to do? Type "1" sort all appliences by powerconsum
     	powerSupply.forEach(getOwners);
     break
 	};
-	r1.close();
+	
 	const rl2 = readline.createInterface({
 	input: process.stdin,
 	output: process.stdout
