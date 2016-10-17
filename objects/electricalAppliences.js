@@ -22,6 +22,11 @@ function ElectricalAppliences(){};
  	},
  	setName:function(name){
  		this.name=name;
- 	}
+ 	},
+ 	FindValue:function(value){
+	for (var i in this){
+		if(this[i]==value) return console.log(this);
+	}
+	}
 	};
 	module.exports=ElectricalAppliences;

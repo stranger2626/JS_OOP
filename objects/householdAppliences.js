@@ -1,4 +1,4 @@
-var inherit = require('../inherit.js');
+var inherit = require('./inherit.js');
 var ElectricalAppliences=require('./electricalAppliences.js');
 function HouseholdAppliences(name,powerConsumption,enabled){
 		this.name=name||'BasicElectricalApplienceName',
