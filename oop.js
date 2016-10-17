@@ -12,10 +12,7 @@
  const readline = require('readline');
  
  var powerSupply = new Array(smartapplience1 = new SmartAppliences(),aplience1 = new HouseholdAppliences('somerandomh','55','enabled'), smartapplience2 = new SmartAppliences('secondsmart','44','enabled','John'));
-		const rl2 = readline.createInterface({
-	input: process.stdin,
-	output: process.stdout
-	});
+		
 		const rl0 =readline.createInterface({
 			input:process.stdin,
 			output:process.stdout
@@ -48,6 +45,11 @@ rl.question('What do you want to do? Type "1" sort all appliences by powerconsum
     	powerSupply.forEach(getOwners);
     break
 	};
+	r1.close();
+	const rl2 = readline.createInterface({
+	input: process.stdin,
+	output: process.stdout
+	});
   rl2.question('Enter search value ',(answer)=>{
 		val=answer;
 		powerSupply.forEach(Search);
